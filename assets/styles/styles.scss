@@ -152,6 +152,7 @@ body{
 }
 .global-modal-body{
   width: 100%;
+  padding-bottom: 10px;
 }
 .global-modal-body p{
   color: #34495E;
@@ -160,25 +161,12 @@ body{
   padding: 10px 15px;
   margin: 0;
 }
-.global-modal-body .content-left {
-  height: 225px;
-  width: 50%;
-  position: relative;
-  top: 55px;
-  float: left;
-  border-right: 1px solid #CCC;
-}
 
-.global-modal-body .content-right{
-  height: 225px;
-  width: 50%;
-  position: relative;
-  top: 55px;
-  float: left;
-}
-.content-right .sponsor-name{
-  font-weight: bold;
-  color: #000;
+.global-modal_contents h5{
+  font-size: 1.25em;
+  text-align: center;
+  margin: 0;
+  font-family: $header-font-family;
 }
 .global-modal_contents h1 {
   margin: 0;
@@ -236,6 +224,7 @@ body{
     margin: 40px auto;
     float: none;
     border-right: none;
+    z-index: 1;
   }
 }
 @media(max-width: 1027px){
