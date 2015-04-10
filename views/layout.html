@@ -31,6 +31,9 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/fonts/font.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/skeleton.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
 
@@ -98,21 +101,28 @@
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/dependencies/jquery.min.js"></script>
-    <script src="/js/bootstrap-sprockets.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap/affix.js"></script>
-    <script src="/js/bootstrap/alert.js"></script>
-    <script src="/js/bootstrap/button.js"></script>
-    <script src="/js/bootstrap/carousel.js"></script>
-    <script src="/js/bootstrap/collapse.js"></script>
-    <script src="/js/bootstrap/dropdown.js"></script>
-    <script src="/js/bootstrap/modal.js"></script>
-    <script src="/js/bootstrap/popover.js"></script>
-    <script src="/js/bootstrap/scrollspy.js"></script>
-    <script src="/js/bootstrap/tab.js"></script>
-    <script src="/js/bootstrap/tooltip.js"></script>
-    <script src="/js/bootstrap/transition.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/modernizr.custom.js"></script>
+    <script src="/js/respond.min.js"></script>
     <!--SCRIPTS END-->
+
+  <script>
+      var globalModal = $('.global-modal');
+      $( ".btn-green-flat-trigger" ).on( "click", function(e) {
+          e.preventDefault();
+          $( globalModal ).toggleClass('global-modal-show');
+      });
+      $( ".overlay" ).on( "click", function() {
+          $( globalModal ).toggleClass('global-modal-show');
+      });
+      $( ".global-modal_close" ).on( "click", function(e) {
+          e.preventDefault();
+          $( globalModal ).toggleClass('global-modal-show');
+      });
+      $(".mobile-close").on("click", function(e){
+          e.preventDefault();
+          $( globalModal ).toggleClass('global-modal-show');
+      });
+  </script>
   </body>
 </html>

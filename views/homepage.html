@@ -2,43 +2,58 @@
 
 {% block content %}
 <!-- Default home page -->
-<div class="site-wrapper">
+<div class="row header">
+    <h3 class="two columns logo">Artistly</h3>
+    <nav class="nine columns">
+        <div class="cd-modal-action nav">
+            <a href="#how" class="btn-green-flat-trigger">Our Story</a>
+            <span class="cd-modal-bg"></span>
+            <!--<li><a href="#upvote">Upvote your favorite events</a></li>-->
+            <!--<li><a href="#tip">Tip your favorite artists</a></li>-->
+        </div>
+    </nav>
+</div>
+<div class="container">
 
-    <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand">Artistly</h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
+    <div id="content">
+        <div class="inner">
+        <div class="row">
+            <div class="twelve columns">
+                <h1 class="cover-heading">Where art lovers meet indie events.</h1>
+                <span class="blurb">Discover independent artists in your city.</span></div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <input type="text" class="js-email">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Request invite</button>
+            </span>
             </div>
-
-            <div class="inner cover">
-                <h1 class="cover-heading">Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                <p class="lead">
-                    <a href="#" class="btn btn-lg btn-default">Learn more</a>
-                </p>
+        </div>
+            <div class="row cities">
+                <div class="four columns">San Francisco</div>
+                <div class="four columns">New York</div>
+                <div class="four columns">Barcelona</div>
             </div>
-
-            <div class="mastfoot">
-                <div class="inner">
-                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-                </div>
-            </div>
-
         </div>
 
     </div>
+</div>
 
+<div class="global-modal">
+    <div class="overlay"></div>
+    <div class="global-modal_contents modal-transition">
+        <div class="global-modal-header">
+            <a class="mobile-close">Close</a>
+            <h3>Our Story</h3>
+        </div>
+        <div class="global-modal-body">
+       <p>What is our story? Simply put, it’s a story of the underdog. It’s a story of how we are trying to fight for more awareness for the small, independent artists out there that are going up against the goliaths.</p>
+            <p>It’s how we’re building something that can get more of these indie artist’s work out there and known. Now that you know why, it’s time to move on to how. We’re building something that will let you know about the latest events happening in your area, and then zoom in and find the artists behind the works at the events.</p>
+            <p>If you like there work, then feel free to tip them and help us win one more fight. In a couple words, we’re trying to create huge indie artists. Yes, that is an oxymoron. We’ll create a whole new way of discovering these indie artists, helping them out and pushing them up to bigger heights. We’re creating the future of indie art.
+       </p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
