@@ -20,6 +20,7 @@
 
 // Ensure we're in the project directory, so relative paths work as expected
 // no matter where we actually lift from.
+
 process.chdir(__dirname);
 
 // Ensure a "sails" can be located:
@@ -49,7 +50,9 @@ process.chdir(__dirname);
       console.error('Your `.sailsrc` file(s) will be ignored.');
       console.error('To resolve this, run:');
       console.error('npm install rc --save');
-      rc = function () { return {}; };
+      rc = function() {
+        return {};
+      };
     }
   }
 

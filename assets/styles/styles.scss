@@ -1,14 +1,12 @@
-html{
-height: 100%;
-}
-
-body{
+html {
   height: 100%;
 }
-
-.container{
+body {
   height: 100%;
-  background: url(../images/bg.jpg) no-repeat center center fixed;
+}
+.container {
+  height: 100%;
+  background: url("../images/bg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -16,86 +14,78 @@ body{
   max-width: 100%;
   width: 100%;
 }
-
 // header
-.header{
+.header {
   font-family: $body-font-family;
   height: 73px;
   line-height: 24px;
-  .logo{
-    background: url('../images/logo.png') no-repeat;
+  .logo {
+    background: url("../images/logo.png") no-repeat;
     width: 200px;
     height: 73px;
     text-indent: -9999px;
     position: relative;
     left: 36px;
   }
-
-  nav{
+  nav {
     text-align: right;
-    padding: 10px 0 0 0;
+    padding: 10px 0 0;
     display: inline;
     padding: 10px;
-    a{
+    a {
       color: #000;
       text-decoration: none;
       font-size: 1.2em;
       display: block;
       position: relative;
       top: 10px;
-      right: 20px;
-      &:hover{
+      float: right;
+      &:hover {
         color: $primary-color;
       }
     }
   }
 }
-
 //content
-#content{
+#content {
   display: table;
   height: 74%;
   width: 100%;
-
-  .inner{
+  .inner {
     display: table-cell;
     width: 100%;
     vertical-align: middle;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.3);
-    color:white;
+    color: white;
     position: relative;
   }
-
-  h1{
+  h1 {
     font-family: $header-font-family;
     font-size: 2.4em;
     margin: 0;
     font-weight: normal;
     letter-spacing: 0.2px;
   }
-  .blurb{
+  .blurb {
     font-family: $blurb-font-family;
     font-size: 1.5em;
     padding-bottom: 10px;
     display: block;
   }
-
-  .js-email{
+  .js-email {
     width: 400px;
     height: 50px;
     padding: 0 0 0 5px;
     color: black;
   }
-
-  button{
+  button {
     border: 1px solid $primary-color;
     background: $primary-color;
     color: black;
     height: 50px;
   }
-  
-  .cities{
+  .cities {
     position: absolute;
     bottom: 20px;
     width: 100%;
@@ -103,20 +93,16 @@ body{
     color: $secondary-color;
   }
 }
-
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-
 .global-modal {
   visibility: hidden;
 }
-
 .global-modal_contents {
-  background: #FFF;
+  background: #fff;
   -webkit-box-shadow: 0 0 8px 2px rgba(182, 182, 182, 0.75);
   -moz-box-shadow: 0 0 8px 2px rgba(182,182,182, 0.75);
   -o-box-shadow: 0 0 8px 2px rgba(182,182,182,0.75);
@@ -128,11 +114,11 @@ body{
   top: 15%;
   min-height: 450px;
 }
-.global-modal-header{
+.global-modal-header {
   border-bottom: 1px solid #ccc;
 }
-.global-modal-header h3{
-  color: #34495E;
+.global-modal-header h3 {
+  color: #34495e;
   text-align: center;
   font-weight: bold;
   font-size: 22px;
@@ -140,29 +126,26 @@ body{
   top: 10px;
   font-family: $header-font-family;
 }
-
-.global-modal-header .mobile-close{
+.global-modal-header .mobile-close {
   /*float: right;*/
   padding: 10px;
   cursor: pointer;
 }
-
-.global-modal-header span{
+.global-modal-header span {
   font-weight: 200;
 }
-.global-modal-body{
+.global-modal-body {
   width: 100%;
   padding-bottom: 10px;
 }
-.global-modal-body p{
-  color: #34495E;
+.global-modal-body p {
+  color: #34495e;
   font-size: 15px;
   font-family: $body-font-family;
   padding: 10px 15px;
   margin: 0;
 }
-
-.global-modal_contents h5{
+.global-modal_contents h5 {
   font-size: 1.25em;
   text-align: center;
   margin: 0;
@@ -175,18 +158,15 @@ body{
   text-align: center;
   display: block;
 }
-
 .global-modal_close {
   position: absolute;
   right: 2rem;
   top: 2rem;
   text-decoration: none;
 }
-
 .global-modal-show {
   visibility: visible;
 }
-
 .global-modal-transition {
   -webkit-transform: scale(0.7);
   -moz-transform: scale(0.7);
@@ -197,7 +177,6 @@ body{
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .global-modal-show .global-modal-transition {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -205,30 +184,28 @@ body{
   transform: scale(1);
   opacity: 1;
 }
-
-.sweet-alert{
-	.confirm{
-		background: $primary-color!important;
-		height: 40px;
+.sweet-alert {
+  .confirm {
+    background: $primary-color!important;
+    height: 40px;
     line-height: 40px;
     padding: 0;
     width: 100px;
-	}
+  }
 }
-
-@media (max-width: 1139px){
-  .global-modal p{
+@media (max-width: 1139px) {
+  .global-modal p {
     text-align: center;
   }
-  .global-modal-body .content-left{
+  .global-modal-body .content-left {
     width: 80%;
-    display:block;
+    display: block;
     float: none;
     margin: 0 auto;
     border-right: none;
     border-bottom: 1px solid #ccc;
   }
-  .global-modal-body .content-right{
+  .global-modal-body .content-right {
     width: 80%;
     display: block;
     margin: 40px auto;
@@ -237,13 +214,12 @@ body{
     z-index: 1;
   }
 }
-@media(max-width: 1027px){
-  .global-modal-header h3{
+@media(max-width: 1027px) {
+  .global-modal-header h3 {
     font-size: 18px;
   }
 }
 @media (max-width : 767px) {
-
   .global-modal_contents {
     top: 0;
     left: 0;
@@ -251,11 +227,11 @@ body{
     width: 100%;
     margin: 0;
   }
-  .global-modal-header h3{
+  .global-modal-header h3 {
     font-size: 22px;
-    padding: 10px 0 0 0;
+    padding: 10px 0 0;
   }
-  .global-modal-header .mobile-close{
+  .global-modal-header .mobile-close {
     display: block;
     position: absolute;
     right: 10px;
@@ -265,22 +241,20 @@ body{
   .global-modal_close {
     display: block;
   }
-
   .global-modal-transition {
     -webkit-transform: translateX(-0) translateY(150%);
     -moz-transform: translateX(-0) translateY(150%);
     -ms-transform: translateX(-0) translateY(150%);
     transform: translateX(-0) translateY(150%);
   }
-
 }
-@media (max-width: 495px){
-  .global-modal-header h3{
+@media (max-width: 495px) {
+  .global-modal-header h3 {
     font-size: 18px;
   }
 }
-@media (max-width: 415px){
-  .global-modal-header h3{
+@media (max-width: 415px) {
+  .global-modal-header h3 {
     font-size: 15px;
   }
 }

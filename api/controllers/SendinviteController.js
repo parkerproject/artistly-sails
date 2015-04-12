@@ -6,26 +6,41 @@
  */
 
 module.exports = {
-	
 
+  index: function(req, res) {
+    var email = req.body.email;
+    var hash = req.body.hash;
+    console.log(Artistly);
+
+    var result = (this.checkifexist(email)) ? 'already exist' : 'saved';
+    Artistly.find().exec(function(err, result) {
+      console.log(result);
+    });
+
+
+    return res.json({
+      status: req.body.hash
+    });
+  },
 
   /**
    * `SendinviteController.checkifexist()`
    */
-  checkifexist: function (req, res) {
-    return res.json({
-      todo: 'checkifexist() is not implemented yet!'
-    });
+  checkifexist: function(userEmail) {
+    var flag = true;
+
+    //Artist.findOne({ email: userEmail });
+
+    return flag;
   },
 
 
   /**
    * `SendinviteController.save()`
    */
-  save: function (req, res) {
+  save: function(req, res) {
     return res.json({
       todo: 'save() is not implemented yet!'
     });
   }
 };
-
