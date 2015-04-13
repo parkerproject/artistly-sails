@@ -10,37 +10,27 @@ module.exports = {
   index: function(req, res) {
     var email = req.body.email;
     var hash = req.body.hash;
-    console.log(Artistly);
 
-    var result = (this.checkifexist(email)) ? 'already exist' : 'saved';
-    Artistly.find().exec(function(err, result) {
-      console.log(result);
+    //var result = (this.checkifexist(email)) ? 'already exist' : 'saved';
+    Artistly.count({
+      email: email
+    }).exec(function(err, result) {
+      if (result === 0) {
+        Artistly.create({
+          email: email,
+          hash: hash
+        }).exec(function(err, created) {
+          return res.json({
+            status: 'success'
+          });
+        });
+      } else {
+        res.json({
+          status: 'failed'
+        });
+      }
     });
 
-
-    return res.json({
-      status: req.body.hash
-    });
-  },
-
-  /**
-   * `SendinviteController.checkifexist()`
-   */
-  checkifexist: function(userEmail) {
-    var flag = true;
-
-    //Artist.findOne({ email: userEmail });
-
-    return flag;
-  },
-
-
-  /**
-   * `SendinviteController.save()`
-   */
-  save: function(req, res) {
-    return res.json({
-      todo: 'save() is not implemented yet!'
-    });
   }
+
 };
