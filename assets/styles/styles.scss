@@ -228,6 +228,9 @@ body {
   }
 }
 @media (max-width : 767px) {
+  #content .js-email {
+    width: 100%;
+  }
   .global-modal_contents {
     top: 0;
     left: 0;
