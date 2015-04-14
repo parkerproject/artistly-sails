@@ -67,6 +67,7 @@ function sendEmail(email) {
     console.log(data);
 
     if (data.status == 'success') {
+      $('.js-submit').text('get invite');
       swal('Awesome! We have received your request');
     } else {
       $('.js-submit').text('get invite');
