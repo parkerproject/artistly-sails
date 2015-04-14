@@ -67,10 +67,10 @@ function sendEmail(email) {
     console.log(data);
 
     if (data.status == 'success') {
-      $('.js-submit').text('get invite');
+      $('.js-submit').text('request invite');
       swal('Awesome! We have received your request');
     } else {
-      $('.js-submit').text('get invite');
+      $('.js-submit').text('request invite');
       swal('You have already submitted your email.');
       //document.querySelector('.form').innerHTML = '<i class="notify animated bounceInRight">' + data + '</i>';
     }
