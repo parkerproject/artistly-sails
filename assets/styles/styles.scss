@@ -6,13 +6,13 @@ body {
 }
 .container {
   height: 100%;
-  background: url("../images/bg.jpg") no-repeat center center fixed;
+ /*  background: url("../images/bg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
   max-width: 100%;
-  width: 100%;
+  width: 100%; 
 }
 // header
 .header {
@@ -36,14 +36,24 @@ body {
       color: #000;
       text-decoration: none;
       font-size: 1.2em;
-      display: block;
+      display: inline-block;
       position: relative;
       top: 10px;
-      float: right;
+/*       float: right; */
       font-weight: bold;
       &:hover {
         color: $primary-color;
       }
+			&.social{
+				text-indent: -9999px;
+				font-size: 1.5em;
+				color: $black-color;
+				margin-right: 10px;
+				width: 28px;
+				&:hover {
+        color: $primary-color;
+         }
+			}
     }
   }
 }
@@ -57,9 +67,22 @@ body {
     width: 100%;
     vertical-align: middle;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
+		color: grey;
+/*     background-color: rgba(0, 0, 0, 0.3); */
     position: relative;
+		img{
+			display: block;
+			margin: 0 auto 20px auto;
+			max-width: 100%;
+			&.main-image{
+			 width: 865px;
+			 height: 449px;
+			}
+
+		}
+		.child{
+			padding: 20px 0;
+		}
   }
   h1 {
     font-family: $header-font-family;
@@ -67,6 +90,7 @@ body {
     margin: 0;
     font-weight: normal;
     letter-spacing: 0.2px;
+		color: $black-color;
   }
   .blurb {
     font-family: $blurb-font-family;
@@ -84,16 +108,23 @@ body {
   button {
     border: 1px solid $primary-color;
     background: $primary-color;
-    color: black;
+    color: #fff;
     height: 50px;
-    font-size: 1em;
+    font-size: 0.9em;
   }
   .cities {
-    position: absolute;
-    bottom: 20px;
     width: 100%;
     font-family: $header-font-family;
-    color: $secondary-color;
+		border-top: 1px solid #efefef;
+		padding-top: 20px;
+    h4{
+			color: $primary-color;
+			margin-bottom: 0;
+		}
+		&.live{
+			color: $primary-color;
+		}
+ 
   }
 }
 * {
