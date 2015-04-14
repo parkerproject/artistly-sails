@@ -40,7 +40,7 @@ body {
       position: relative;
       top: 10px;
       float: right;
-			font-weight: bold;
+      font-weight: bold;
       &:hover {
         color: $primary-color;
       }
@@ -73,7 +73,7 @@ body {
     font-size: 1.5em;
     padding-bottom: 10px;
     display: block;
-		font-weight: bold;
+    font-weight: bold;
   }
   .js-email {
     width: 400px;
@@ -86,7 +86,7 @@ body {
     background: $primary-color;
     color: black;
     height: 50px;
-		font-size: 1em;
+    font-size: 1em;
   }
   .cities {
     position: absolute;
@@ -102,7 +102,8 @@ body {
   box-sizing: border-box;
 }
 .global-modal {
-  visibility: hidden;
+  //visibility: hidden;
+  display: none;
 }
 .global-modal_contents {
   background: #fff;
@@ -145,13 +146,13 @@ body {
   color: #34495e;
   font-size: 1.2em;
   font-family: $body-font-family;
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 15px;
   margin: 0;
 }
 .global-modal_contents h5 {
   font-size: 1.25em;
   text-align: center;
-  margin: 25px 0 0 0;
+  margin: 25px 0 0;
   font-family: $header-font-family;
 }
 .global-modal_contents h1 {
@@ -168,7 +169,7 @@ body {
   text-decoration: none;
 }
 .global-modal-show {
-  visibility: visible;
+  display: block;
 }
 .global-modal-transition {
   -webkit-transform: scale(0.7);
@@ -195,10 +196,10 @@ body {
     padding: 0;
     width: 100px;
   }
-	h2{
-		font-size: 3.2rem;
-		line-height: auto;
-	}
+  h2 {
+    font-size: 3.2rem;
+    line-height: auto;
+  }
 }
 @media (max-width: 1139px) {
   .global-modal p {
