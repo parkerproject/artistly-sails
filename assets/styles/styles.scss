@@ -3,6 +3,7 @@ html {
 }
 body {
   height: 100%;
+  font-family: $body-font-family;
 }
 .container {
   height: 100%;
@@ -119,9 +120,13 @@ body {
     h4 {
       color: $primary-color;
       margin-bottom: 0;
+      font-family: $header-font-family;
     }
     &.live {
       color: $primary-color;
+    }
+    p {
+      font-family: $body-font-family;
     }
   }
 }
