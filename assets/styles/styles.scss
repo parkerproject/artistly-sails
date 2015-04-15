@@ -22,11 +22,12 @@ body {
   line-height: 24px;
   .logo {
     background: url("../images/logo.png") no-repeat;
-    width: 239px;
-    height: 77px;
+    width: 150px;
+    height: 32px;
     text-indent: -9999px;
     position: relative;
     left: 36px;
+		top: 10px;
   }
   nav {
     text-align: right;
@@ -85,7 +86,7 @@ body {
     }
   }
   h1 {
-    font-family: $header-font-family;
+    font-family: $body-font-family;
     font-size: 2.4em;
     margin: 0;
     font-weight: normal;
@@ -120,7 +121,7 @@ body {
     h4 {
       color: $primary-color;
       margin-bottom: 0;
-      font-family: $header-font-family;
+      font-family: $body-font-family;
     }
     &.live {
       color: $primary-color;
