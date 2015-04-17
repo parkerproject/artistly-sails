@@ -7,74 +7,90 @@
  */
 
 $(function() {
-  window._hash = window.location.hash;
-  myStoryModal();
+    window._hash = window.location.hash;
+    myStoryModal();
+    scrollto();
 
-  $('.js-email').val('');
-  $(document).on('click', '.js-submit', function() {
-    checkEmail();
-  });
+    $('.js-email').val('');
+    $(document).on('click', '.js-submit', function() {
+        checkEmail();
+    });
 
 
 
 });
 
+function scrollto() {
+    $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+}
+
 
 function myStoryModal() {
-  var globalModal = $('.global-modal');
-  $(".btn-green-flat-trigger").on("click", function(e) {
-    e.preventDefault();
-    $(globalModal).toggleClass('global-modal-show');
-  });
-  $(".overlay").on("click", function() {
-    $(globalModal).toggleClass('global-modal-show');
-  });
-  $(".global-modal_close").on("click", function(e) {
-    e.preventDefault();
-    $(globalModal).toggleClass('global-modal-show');
-  });
-  $(".mobile-close").on("click", function(e) {
-    e.preventDefault();
-    $(globalModal).toggleClass('global-modal-show');
-  });
+    var globalModal = $('.global-modal');
+    $(".btn-green-flat-trigger").on("click", function(e) {
+        e.preventDefault();
+        $(globalModal).toggleClass('global-modal-show');
+    });
+    $(".overlay").on("click", function() {
+        $(globalModal).toggleClass('global-modal-show');
+    });
+    $(".global-modal_close").on("click", function(e) {
+        e.preventDefault();
+        $(globalModal).toggleClass('global-modal-show');
+    });
+    $(".mobile-close").on("click", function(e) {
+        e.preventDefault();
+        $(globalModal).toggleClass('global-modal-show');
+    });
 }
 
 function validateEmail(email) {
-  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
 
 
 function checkEmail() {
-  var email = document.querySelector('.js-email').value;
-  if (validateEmail(email)) {
-    sendEmail(email);
-  } else {
-    sweetAlert("Oops...", "enter your valid email!", "error");
-  }
+    var email = document.querySelector('.js-email').value;
+    if (validateEmail(email)) {
+        sendEmail(email);
+    } else {
+        sweetAlert("Oops...", "enter your valid email!", "error");
+    }
 }
 
 function sendEmail(email) {
-  $('.js-submit').text('processing...');
+    $('.js-submit').text('processing...');
 
-  var hash = window._hash;
-  hash = hash.replace('#', '');
+    var hash = window._hash;
+    hash = hash.replace('#', '');
 
-  $.post('/process_email/', {
-    email: email,
-    hash: hash
-  }, function(data) {
-    console.log(data);
+    $.post('/process_email/', {
+        email: email,
+        hash: hash
+    }, function(data) {
+        console.log(data);
 
-    if (data.status == 'success') {
-      $('.js-submit').text('request invite');
-      swal('Awesome! We have received your request');
-    } else {
-      $('.js-submit').text('request invite');
-      swal('You have already submitted your email.');
-      //document.querySelector('.form').innerHTML = '<i class="notify animated bounceInRight">' + data + '</i>';
-    }
+        if (data.status == 'success') {
+            $('.js-submit').text('request invite');
+            swal('Awesome! We have received your request');
+        } else {
+            $('.js-submit').text('request invite');
+            swal('You have already submitted your email.');
+            //document.querySelector('.form').innerHTML = '<i class="notify animated bounceInRight">' + data + '</i>';
+        }
 
 
-  });
+    });
 }
