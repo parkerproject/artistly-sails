@@ -227,7 +227,7 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
+@-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -244,7 +244,7 @@ a:focus {
     }
 }
 
-@-moz-keyframes pulse {    
+@-moz-keyframes pulse {
     0% {
         -moz-transform: scale(1);
         transform: scale(1);
@@ -282,7 +282,7 @@ a:focus {
     background: url(../img/green%20background.png) no-repeat center center scroll;
 }
 
-    
+
 
 
 #map {
@@ -317,17 +317,33 @@ a:focus {
 }
 
 .btn-default {
-    border: 1px solid #42dca3;
-    color: #42dca3;
-    background-color: transparent;
+  border: 1px solid #65d165;
+  color: white;
+  background-color: transparent;
+  background: #65d165;
+  border-radius: 5px;
+  height: 51px;
+  margin: 10px auto;
+  display: block;
+  width: 200px;
+}
+.btn-default.orange{
+    background: #ffdb61;
+    border: 1px solid #ffdb61;
+    color: black;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #42dca3;
+    border: 1px solid #a5e565;
     outline: 0;
     color: #000;
-    background-color: #42dca3;
+    background-color: #a5e565;
+}
+
+.btn-default.orange:hover{
+    background: #ffdb61;
+    border: 1px solid #ffdb61;
 }
 
 ul.banner-social-buttons {
@@ -356,7 +372,7 @@ ul.banner-social-buttons {
     margin-bottom: 100px;
     margin-top: auto;
 }
-        
+
 
 
 ::-moz-selection {
@@ -405,4 +421,3 @@ body {
 .bottom-cta{
     color: white;
 }
-
